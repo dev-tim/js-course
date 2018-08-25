@@ -8,14 +8,11 @@
      }
   }
 
-
-  let composedBlablaFunction = function(blaFunction){
+  let composedBlablaFunction = function(blaFunction) {
     console.log('Get some air in your lungs!');
     blaFunction();    
     console.log('Now you can rest!')
   }
 
   composedBlablaFunction(blablaFunction('Hello world')) 
-
-
 }());
