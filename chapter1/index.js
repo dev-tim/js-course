@@ -1,33 +1,87 @@
-(function(){
+let Formulas = {};
 
-  console.log('Hello world');
+Formulas.add = function(a, b){
+  return a + b;
+}
 
-  let add = function(a, b){
-    return a + b;
+Formulas.divideMultiply = function(a, b){
+  if(b==0){
+    return undefined;
   }
+  return a * a / b;
+}
 
-  let o = {
-     key: { key: { key: 42 }}
-  };
+Formulas.roundNumbers = function(a){
+  return Math.round(a);
+}
 
-  let arr = [1,2,3,4,5];
-  
-  console.log(arr[4])
+Formulas.sinTimesCos = function(a){
+  return Math.sin(a)*Math.cos(a);
+}
 
+Formulas.parseNumberFromString = function(a){
+  return parseFloat(a);
+}
 
-
-
-  let blablaFunction = function(phrase) {
-     return function(){
-       console.log('Phrase ' + phrase);
-     }
+Formulas.findObjectByKey = function(obj, key){
+  var i;
+  var j;
+  var p;
+  for(i = 0; i < Object.keys(obj).length; i++){
+    if(Object.keys(obj)[i] === key){
+      return Object.values(obj)[i];
+    }
+    if(typeof Object.values(obj)[i] === "object" && (Object.values(obj)[i] !== null)){
+      var newObject = Object.values(obj)[i];
+        for(j = 0; j < Object.keys(newObject).length; j++){
+          if(Object.keys(newObject)[j] === key){
+            return Object.values(newObject)[j];
+          }
+          if(typeof Object.values(newObject)[j] === "object" && (Object.values(newObject)[j] !== null)){
+            var newObject2 = Object.values(newObject)[j];
+            for(p = 0; p < Object.keys(newObject2).length; p++){
+              if(Object.keys(newObject2)[p] === key){
+                return Object.values(newObject2)[p];
+              }  
+            }
+          }
+        } 
+    }
   }
+}
 
-  let composedBlablaFunction = function(blaFunction) {
-    console.log('Get some air in your lungs!');
-    blaFunction();    
-    console.log('Now you can rest!')
+Formulas.parseJSON = function(a){
+  return JSON.parse(a);
+}
+
+Formulas.pushToArray = function(a,b){
+  return a.push(b);
+}
+
+Formulas.squareArrayValues = function(a){
+  var newArr = a;
+  for (var i = 0; i < newArr.length; i++){
+    newArr[i] = newArr[i]*newArr[i];
   }
+  return a;
+}
 
-  composedBlablaFunction(blablaFunction('Hello world')) 
-}());
+Formulas.sortArray = function(a){
+  return a.sort(Formulas.sortNumbers)
+}
+
+Formulas.sortNumbers = function(a,b){
+  return a-b;
+}
+
+Formulas.reverseString = function(a){
+  var newString = "";
+  for (var i = a.length - 1; i >= 0; i--) {
+    newString += a[i];
+  }
+  return newString;
+}
+
+module.exports = Formulas;
+
+
