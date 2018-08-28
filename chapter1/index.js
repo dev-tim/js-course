@@ -1,90 +1,61 @@
-(function(){
-
-  let Function = {};
-
-  Function.add = function (a, b){
+var Function = {
+  add: function (a, b){
     return a + b;
-  };
+  },
 
-  Function.divideAndMultiply = function (a,b){
+  divideAndMultiply: function (a,b){
     if (b==0){
       return undefined;
     }
     return a*a/b;
-  };
+  },
+  roundNumber: function (a){
+    return Math.round(a);
+  },
 
-  Function.roundNumber = function (a){
-    return Math.round;
-  };
+  findSinCos: function (a) {
+    return Math.sin(a) * Math.sin(a) +  Math.cos(a) *  Math.cos(a);
+  },
 
-  Function.findSinCos = function (a) {
-    return Math.sin(a) * Math.cos(a);
-  };
-
-  Function.parseNumberFromString = function (price){
+  parseNumberFromString: function (price){
     return parseFloat (price);
-  };
+  },
 
-  Function.findObjectValueByKey = function  (obj, key){
-    var res = obj ["key"];
-    return res;
-  };
-
-  Function.findObjectValueByDynamicKey = function (obj, key){
-    var res = obj.key;
-    return res;
-  };
-
-  Function.parseObjectFromJSON = function (json){
-    return JSON.parse (json);
-  };
-
-  Function.pushToArray = function (array,b){
-    return array.push(b);
-  };
-
-  Function.popFromArray = function (array,b){
-    return array.pop(b);
-  };
-
-  
+};
 
 
+Function.findObjectValueByKey = function  (obj, key){
+  var res = obj ["key"];
+  return res;
+};
 
+Function.findObjectValueByDynamicKey = function (obj, key){
+  var res = obj.key;
+  return res;
+};
 
+Function.parseObjectFromJSON = function (json){
+  return JSON.parse (json);
+};
 
+Function.pushToArray = function (array,b){
+  return array.push(b);
+};
 
+Function.popFromArray = function (array,b){
+  return array.pop(b);
+};
 
-  
+Function.squareOfArrayValue = function (arr, exponent){
+  return Math.pow (arr [i], exponent);
+};
 
+Function.sortArray = function (){
+  return arr.sort;
+};
 
+Function.reverseString = function (string){
+  return string.split("").reverse().join("");
+};
 
-
-
-
-
-  let o = {
-     key: { key: { key: 42 }}
-  };
-
-  let arr = [1,2,3,4,5];
-  
-  console.log(arr[4]);
-
-
-
-
-  let blablaFunction = function(phrase) {
-     return function(){
-       console.log('Phrase ' + phrase);
-     };
-  };
-
-  let composedBlablaFunction = function(blaFunction) {
-    console.log('Get some air in your lungs!');
-    blaFunction();    
-    console.log('Now you can rest!');
-  };
-
-  composedBlablaFunction(blablaFunction('Hello world')) ;
-}());
+module.exports = Function;

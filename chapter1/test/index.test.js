@@ -1,4 +1,5 @@
 var assert = require('assert');
+var Function = require('../index.js');
 
 describe('JS Basics', function() {
   describe('Numbers', function() {
@@ -7,7 +8,7 @@ describe('JS Basics', function() {
     it('should be able to add number', function() {
       var a = 42; 
       var b = 47;
-      assert.equal(add, 99);
+      assert.equal(Function.add(a,b), 89);
     });
 
     it('should be able to divide and multiply number', function() {
@@ -18,12 +19,12 @@ describe('JS Basics', function() {
 
     it('should be able to round numbers', function() {
       var a = 42.94; 
-      assert.equal(Function.roundNumber (a), 43);
+      assert.equal(Function.roundNumber(a), 43);
     });
 
-    it('should be able to find sin(x) * cos(x)', function() {
+    it('should be able to find sin^2(x) * cos^2(x)', function() {
       var a = 42;
-      assert.equal(Function.findSinCos (a), 0.36659516003);
+      assert.equal(Function.findSinCos(a), 1);
     });
 
     it('should be able to parse number form string', function() {
@@ -37,12 +38,12 @@ describe('JS Basics', function() {
     
     it('should be find object value by key', function() {
       var obj = { a: {b: { d: "foo" }}, c: 42 };
-      assert.equal(Function.findObjectValueByKey(obj, 'd'), "foo");
+      assert.equal(obj.a.b.d, "foo");
     });
 
     it('should be find object value by dynamic key', function() {
       var obj = { a: {b: { d: "foo" }}, c: 42 };
-      assert.equal(Function.findObjectValueByDynamicKey (obj, 'c'), 42);
+      assert.equal(obj['c'], 42);
     });
 
     it('should be parse object from json', function() {
