@@ -12,22 +12,24 @@ describe('JS Basics', function() {
       var a = 42.94; 
       var b = 0;
 
-      assert.equal(a * a / b, 42);
+      assert.equal(a * a / b, infinity);
     });
 
     it('should be able to round numbers', function() {
       var a = 42.94; 
-      assert.equal(a, 42);
+      assert.equal(Math.round(a), 42);
     });
 
     it('should be able to find sin(x) * cos(x)', function() {
       var a = 42;
+      var product = Math.pow(Math.sin(a), 2) + Math.pow(Math.pow(Math.cos(a)))
       assert.equal(a, 1);
     });
 
     it('should be able to parse number form string', function() {
       var price = "9.99 $"
-      assert.equal(price, 9.99);
+      var digitPrice = price.replace('$', '')
+      assert.strictEqual(parseFloat(digitPrice, 9.99));
     });
   });
 
@@ -35,7 +37,7 @@ describe('JS Basics', function() {
   describe('Objects', function() {
     it('should be find object value by key', function() {
       var obj = { a: {b: { d: "foo" }}, c: 42 }
-      assert.equal(obj, "foo");
+      assert.equal(obj.a.b.d, "foo");
     });
 
     it('should be find object value by dynamic key', function() {
@@ -45,12 +47,13 @@ describe('JS Basics', function() {
 
     it('should be parse object from json', function() {
       var json = '{"ok":true,"user_lessons":[{"user_lesson_id":408097171313,"state":"completed","skip":false,"lesson_id":1,"date_start":1533108640,"tasks":[{"user_task_id":407936828624,"state":"skipped","current_step":"","task_id":1},{"user_task_id":408791535509,"state":"skipped","current_step":"","task_id":2},{"user_task_id":409970847238,"state":"skipped","current_step":"","task_id":3}]}]}'
-      var dateStart = 42;
+      var dateStart = JSON.parse(json)[dateStart.user_lessons[0].dateStart]
       assert.equal(dateStart, 1533108640);
     });
 
     it('should be set objet key', function() {
       var obj = { a: {b: { d: "foo" }}, c: 42 }
+      obj.a.b = "Js Rocks!"
       assert.equal(obj.a.b, "Js Rocks!")
     });
   });
@@ -64,10 +67,12 @@ describe('JS Basics', function() {
 
     it('should to push and pop from array', function() {
       var arrray = [1,2,3,4,5,6,7,8,9]
+      array.push(10)
       assert.equal(arrray.length, 10);
     });
 
     it('should be able to output square of array values', function() {
+      
       assert.equal()
     });
 
