@@ -1,6 +1,6 @@
 var assert = require('assert');
 
-describe('JS Basics', function() {
+xdescribe('JS Basics', function() {
   describe('Numbers', function() {
     it('should be able to add number', function() {
       var a = 42.9902822; 
