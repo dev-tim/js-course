@@ -12,10 +12,7 @@ describe('JS Basics', function() {
       var a = 42.94; 
       var b = 0;
 
-      if(a / b == Infinity) {
-        return 0;
-      }
-      assert.equal(a / b, 43);
+      assert.equal(a * a / b, Infinity);
     });
 
     it('should be able to round numbers', function() {
@@ -25,14 +22,12 @@ describe('JS Basics', function() {
 
     it('should be able to find sin(x) * cos(x)', function() {
       var a = 42;
-      if(a * a) {
-        return 1;
-      }
-      assert.equal(a, 1);
+      var product = Math.pow(Math.sin(a), 2) + Math.pow(Math.cos(a), 2);
+      assert.equal(product, 1);
     });
 
     it('should be able to parse number form string', function() {
-      var price = "9.99 $"
+      var price = "9.99 $" 
       assert.equal(parseFloat(price), 9.99);
     });
   });
@@ -52,14 +47,14 @@ describe('JS Basics', function() {
     // do not know what to do here
     it('should be parse object from json', function() {
       var json = '{"ok":true,"user_lessons":[{"user_lesson_id":408097171313,"state":"completed","skip":false,"lesson_id":1,"date_start":1533108640,"tasks":[{"user_task_id":407936828624,"state":"skipped","current_step":"","task_id":1},{"user_task_id":408791535509,"state":"skipped","current_step":"","task_id":2},{"user_task_id":409970847238,"state":"skipped","current_step":"","task_id":3}]}]}'
-      var dateStart = JSON.parse(json);
-      assert.equal(dateStart[{"user_lessons": "date_starts"}], 1533108640);
+      var dateStart = JSON.parse(json)["user_lessons"][0]["date_start"];
+      assert.equal(dateStart, 1533108640);
     });
 
     it('should be set objet key', function() {
       var obj = { a: {b: { d: "foo" }}, c: 42 }
-      obj.a.b.d = "Js Rocks!";
-      assert.equal(obj.a.b.d, "Js Rocks!")
+      obj.a.b = "Js Rocks!";
+      assert.equal(obj.a.b, "Js Rocks!")
     });
   });
 
@@ -83,18 +78,16 @@ describe('JS Basics', function() {
     //what the heck am I supposed to do here?!
     it('should be able to output square of array values', function() {
       var arrray = [1,2,3,4,5,6,7,8,9];
-      var sum = 0;
-      array.forEach(element => {
-        sum += Math.pow(arrray[i], 2);
-      });
-      assert.equal();
+      var squareArray = arrray.map(function(element){
+        return element * element;
+      })
+      console.log(squareArray);
     });
 
-    // also what should to do here?
+    //
     it('should be able to sort array', function() {
       var arr = [23,23,4,5,123,7,32,13,13,9]
-      arr.sort;
-      assert.equal(arr, []);
+      assert.equal(arr.sort(function(a, b){return a - b }), [ 4, 5, 7, 9, 13, 13, 23, 23, 32, 123 ]);
     });
 
     it('should be able to reverse string', function() {
