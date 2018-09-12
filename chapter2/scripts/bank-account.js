@@ -32,6 +32,10 @@ app.put('/accounts/:id/deposit', function(req, res){
 app.put('/accounts/:id/withdraw', function(req, res){
     ballance= BankAccount.widthraw(parseFloat(_.values(req.body)));
     res.send(ballance);
+<<<<<<< HEAD
+=======
+    
+>>>>>>> added bank-account.js
 });
 
 app.get('/acounts/:id', function(req, res){
