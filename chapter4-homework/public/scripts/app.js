@@ -1,4 +1,6 @@
 (function(){
+    alert('remove me!')
+    
     // add here following boostrap elements
 
     // success button
