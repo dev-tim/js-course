@@ -1,5 +1,5 @@
 (function(){
-    alert('remove me!')
+    alert('remove me!');
     
     // add here following boostrap elements
 
@@ -7,7 +7,8 @@
     // http://getbootstrap.com/docs/4.1/components/buttons/
 
     // login form
-    // http://getbootstrap.com/docs/4.1/components/forms/
+    // http://getbootstrap.com/docs/4.1/components/forms/А
 
     // card
-})();
+
+}());

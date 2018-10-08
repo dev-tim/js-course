@@ -1,21 +1,54 @@
 <html>
+
 <head>
     <title>
         Chapter 4 homework!
     </title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
 </head>
+
 <body>
     <h1>
         Create page with JS!
+    </h1>
+
+    <div id="js-button">
+        <button type="button" class="btn btn-success"> Success </button>
     </div>
 
-    <div id="js-button"></div>
+    <div id="js-login-form">
+        <form>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    placeholder="Enter email" style="width: 20rem;">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" style="width: 20rem;">
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
 
-    <div id="js-login-form"></div>
-
-    <div id="js-card"></div>
+    <div id="js-card">
+        <div class="card" style="width: 18rem; height: 300;">
+            <img class="card-img-top" src="\MIB.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">MIB</h5>
+                <p class="card-text">Men in Black.</p>
+                <a href="#" class="btn btn-primary">Watch movie</a>
+            </div>
+        </div>
+    </div>
 
     <script src="scripts/app.js"></script>
 </body>
+
 </html>
