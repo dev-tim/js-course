@@ -1,0 +1,16 @@
+body {
+    background: black;
+}
+
+.soft-body {
+    background: rgb(228, 238, 196)
+}
+
+.bolder{
+    color: #ababab;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}

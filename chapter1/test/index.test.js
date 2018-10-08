@@ -9,10 +9,19 @@ describe('JS Basics', function () {
       assert.equal(Formulas.add(a, b), 99);
     });
 
+<<<<<<< HEAD
     it('should be able to divide and multiply number', function () {
       var a = 4;
       var b = 2;
       assert.equal(Formulas.divideMultiply(a, b), 8);
+=======
+xdescribe('JS Basics', function() {
+  describe('Numbers', function() {
+    it('should be able to add number', function() {
+      var a = 42.9902822; 
+      var b = 43.2929112;
+      assert.equal(a + b, 99);
+>>>>>>> 4f8b4060407687a11e26eb422cb4e79289fe505c
     });
 
     it('should return undefined if divided by 0', function () {

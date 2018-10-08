@@ -9,7 +9,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+<<<<<<< HEAD
     "express": "^4.16.3"
+=======
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "lodash": "^4.17.10"
+>>>>>>> 4f8b4060407687a11e26eb422cb4e79289fe505c
   },
   "devDependencies": {
     "mocha": "^5.2.0"
