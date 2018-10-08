@@ -7,6 +7,7 @@ var BankAccount = {
 
     deposit: function (money) {
         this.balance = this.balance + money;
+        return this.balance;
     },
     
     widthraw: function (cash) {
