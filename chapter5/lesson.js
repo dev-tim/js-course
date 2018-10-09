@@ -10,19 +10,21 @@
     });
 
     window.addEventListener('mousemove', function(e){
-        console.log([e.clientX, e.clientY]);
+        
     });
 
-    debugger;
-    var coordinates = document.querySelector('#coordinates');
-    var xCoordinateLabel = document.createElement('span');
-    xCoordinateLabel.innerText = ' X coordinate';
+    
+    function initLabelsWithDomElement(){
+        var coordinates = document.querySelector('#coordinates');
+        var xCoordinateLabel = document.createElement('span');
+        xCoordinateLabel.innerText = 'X coordinate';
+        xCoordinateLabel.className = 'btn btn-primary'
 
-    debugger;
-    var yCoordinateLabel = document.createElement('span');
-    yCoordinateLabel.innerText = ' Y coordinate';
+        var yCoordinateLabel = document.createElement('span');
+        yCoordinateLabel.innerText = 'Y coordinate';
+        yCoordinateLabel.className = 'btn btn-primary'
 
-    debugger;
-    coordinates.appendChild(xCoordinateLabel);
-    coordinates.appendChild(yCoordinateLabel);
+        coordinates.appendChild(xCoordinateLabel);
+        coordinates.appendChild(yCoordinateLabel);
+    }
 })();
