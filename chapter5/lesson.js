@@ -10,6 +10,22 @@
     });
 
     window.addEventListener('mousemove', function(e){
-        console.log([e.clientX, e.clientY]);
-    })
+        
+    });
+
+    
+    function initLabelsWithDomElement(){
+        var coordinates = document.querySelector('#coordinates');
+        var xCoordinateLabel = document.createElement('span');
+        xCoordinateLabel.innerText = 'X coordinate';
+        xCoordinateLabel.className = 'btn btn-primary'
+
+        var yCoordinateLabel = document.createElement('span');
+        yCoordinateLabel.innerText = 'Y coordinate';
+        yCoordinateLabel.className = 'btn btn-primary'
+
+        coordinates.appendChild(xCoordinateLabel);
+        coordinates.appendChild(yCoordinateLabel);
+    }
+
 })();
