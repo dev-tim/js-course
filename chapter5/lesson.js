@@ -1,4 +1,9 @@
 const foo = 42;
-(() => {
-    alert('Lesson!');
+(function() {
+    var button = document.getElementById('btn');
+    button.addEventListener('click', function(e){
+        debugger;
+        alert('Clicked!')
+    });
+
 })();
