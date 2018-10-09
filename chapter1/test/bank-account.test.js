@@ -4,12 +4,14 @@ var BankAccount = require('../bank-account').BankAccount;
 describe('Bank account', () => {
     it('should have nomoney on deposit in the beginning', () => {
         var obj = {
-            foo: 42,
-            fn : function() {
-                console.log(this.foo);
+            foo: "hello world",
+            fn: function () {
+                console.log(arguments.join(''));
             }
         }
-        console.log(obj.fn());
+
+        obj.fn(1,2,3,4,45,6, "", {}, [], Infinity,1,23,1,12,12,3,12,3123,123,123,123,123,123,123);
+        
         //assert.equal(BankAccount.balance, 0);
     });
 })
