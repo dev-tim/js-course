@@ -2,7 +2,8 @@ var assert = require('assert');
 var BankAccount = require('../bank-account').BankAccount;
 
 describe('Bank account', () => {
-    it('should have nomoney on deposit in the beginning', () => {
+    it('should have no money on deposit in the beginning', () => {
+
         var obj = {
             foo: "hello world",
             fn: function () {
