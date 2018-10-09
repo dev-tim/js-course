@@ -5,6 +5,11 @@
     });
 
     var mouseOverImage = document.querySelector('.unique-class');
-    debugger;
+    mouseOverImage.addEventListener('mouseover', function(e){
+        // console.log(e);
+    });
 
+    window.addEventListener('mousemove', function(e){
+        console.log([e.clientX, e.clientY]);
+    })
 })();
