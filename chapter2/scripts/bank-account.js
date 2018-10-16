@@ -1,7 +1,3 @@
-var BankSecurity = {
-    creditlimit: 0
-}
-
 var BankAccount = {
     balance: 0,
     deposit: function (money) {
@@ -12,15 +8,14 @@ var BankAccount = {
         if (diff < 0){
             return;
         } 
-        
+
         this.balance = this.balance - cash;
         return this.balance;
     }
 };
 
 module.exports = {
-    BankAccount: BankAccount,
-    BankSecurity: BankSecurity
+    BankAccount: BankAccount
 }
 
 
