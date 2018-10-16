@@ -59,16 +59,18 @@ xdescribe('JS Basics', function() {
   describe('Arrays', function() {
     it('should be access array by index', function() {
       var arrray = [1,2,3,4,5,6,7,8,9]
-      assert.equal(arrray, 5);
+      assert.equal(arrray[1], 5);
     });
 
     it('should to push and pop from array', function() {
       var arrray = [1,2,3,4,5,6,7,8,9]
+      arrray.push
       assert.equal(arrray.length, 10);
     });
 
     it('should be able to output square of array values', function() {
-      assert.equal()
+      var arrray = [1,2,3]
+      assert.equal(arrray.map(element => element * element), [1,4,9])
     });
 
     it('should be able to sort array', function() {
@@ -77,9 +79,16 @@ xdescribe('JS Basics', function() {
     });
 
     it('should be able to reverse string', function() {
-
       var string  = "I love corgies!"
-      assert.equal(string, "!seigroc evol I")
+      var stringArray = string.split('')
+
+      var resversedArray = [];
+      for (let  i = stringArray.length - 1; i >=0; i--){
+        resversedArray.push(stringArray[i]);
+      }
+
+      assert.equal(resversedArray.join(''), "!seigroc evol I")
+      assert.equal(string.split('').reverse().join(''), "!seigroc evol I")
     });
   });
 });

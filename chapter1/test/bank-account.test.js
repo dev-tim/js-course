@@ -3,16 +3,22 @@ var BankAccount = require('../bank-account').BankAccount;
 
 describe('Bank account', () => {
     it('should have no money on deposit in the beginning', () => {
-
-        var obj = {
-            foo: "hello world",
-            fn: function () {
-                console.log(arguments.join(''));
-            }
-        }
-
-        obj.fn(1,2,3,4,45,6, "", {}, [], Infinity,1,23,1,12,12,3,12,3123,123,123,123,123,123,123);
-        
-        //assert.equal(BankAccount.balance, 0);
+        assert.equal(BankAccount.balance, 0);
     });
+
+    it('should be able to deposit money', () => {
+        BankAccount.deposit(100);
+        assert.equal(BankAccount.balance, 100);
+    });
+
+    it('should be able to widthraw money', () => {
+        BankAccount.widthraw(50);
+        assert.equal(BankAccount.balance, 50);
+    });
+
+    it('should be able to widthraw money over credit limit', () => {
+        BankAccount.widthraw(500);
+        assert.equal(BankAccount.balance, 50);
+    });
+
 })
