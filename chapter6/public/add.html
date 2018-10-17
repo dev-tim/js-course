@@ -1,0 +1,33 @@
+<html>
+<head>
+    <title>
+        List
+    </title>
+    <link href="css/app.css" type="text/css" rel="stylesheet"/> 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <form id="add-user-form">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="text" class="form-control" id="add-user-email-input" aria-describedby="emailHelp" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Name</label>
+                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Name">
+            </div>
+             <div class="form-group">
+                <label for="exampleFormControlSelect1">Type</label>
+                <select class="form-control" id="user-type">
+                    <option>teacher</option>
+                    <option>student</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>       
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="scripts/create-user.js"></script> 
+</body>
+</html>
