@@ -2,6 +2,21 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
 
+const Sequelize = require('sequelize');
+const sequelize = new Sequelize('database', 'username', 'password', {
+  host: 'localhost',
+  dialect: 'mysql',
+
+  // http://docs.sequelizejs.com/manual/tutorial/querying.html#operators
+  operatorsAliases: false
+});
+
+const User = sequelize.define('user', {
+    username: Sequelize.STRING,
+    birthday: Sequelize.STRING
+  });
+
+
 const users = [
     {
         id: 1,
@@ -33,8 +48,14 @@ app.get('/users', function(req, res){
 app.post('/users', function(req, res){
     const user = req.body;
     console.log('Req' + JSON.stringify(req.body))
-    users.push(user);
-    res.send(users);
+    sequelize.sync()
+        .then(() => User.create({
+            username: user.name,
+            birthday: user.email
+        }))
+        .then(jane => {
+            res.send("Done");
+        });
 })
 
 app.listen(3000)
