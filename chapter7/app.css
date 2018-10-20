@@ -1,3 +1,32 @@
 body {
-    background-color: red; 
+    background-color: moccasin; 
 }
+
+.absolute-block-element {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+
+    transform: translate(-150px, -150px);
+
+    background-color: aqua;
+}
+
+.relative-container {
+    position: relative;
+}
+
+.new-absolute-block {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+
+    transform: translate(-25px, -25px);
+
+    background-color: greenyellow;
+}
+
