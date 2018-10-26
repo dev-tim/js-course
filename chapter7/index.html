@@ -13,5 +13,26 @@
             </div>
         </div>
     </div>
+
+
+     <div class="margin-based-block-element">
+            <div class="margin-padding-based-block">
+                <span>This post revisits Java 8’s CompletionStage API and specifically its implementation in the standard Java library CompletableFuture. The API is explained by examples that illustrate the various behaviors, where each example focuses on one or two specific behaviors.
+
+Since the CompletableFuture class implements the CompletionStage interface, we first need to understand the contract of that interface. It represents a stage of a certain computation which can be done either synchronously or asynchronously. You can think of it as just a single unit of a pipeline of computations that ultimately generates a final result of interest. This means that several CompletionStages can be chained together so that one stage’s completion triggers the execution of another stage, which in turn triggers another, and so on.
+
+In addition to implementing the CompletionStage interface, CompletableFuture also implements Future, which represents a pending asynchronous event, with the ability to explicitly complete this Future, hence the name CompletableFuture.</span>
+            </div>
+     </div>
+
+    <div class="patent-block-element">
+        <div class="first-block-element">
+            <span>I'm first block</span>
+        </div>
+
+        <div class="second-block-element">
+            <span>I'm second block</span>
+        </div>
+    </div>
 </body>
 </html>
