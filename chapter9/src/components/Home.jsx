@@ -19,14 +19,16 @@ function generateLectures(numberOfLectures = 0){
   })
 }
 
-let itemsArray = generateLectures(10);
+let itemsArray = generateLectures(3);
 
-const Home = () => (
-  <div>
-    <h1>Hello, {formatName(user)}!</h1>
-    <LectionList items={itemsArray} />
-  </div>
-)
+const Home = () => {
+     return  (
+        <div>
+          <h1>Hello, {formatName(user)}!</h1>
+          <LectionList items={itemsArray} />
+        </div>
+      )
+}
 
 
 export default Home;

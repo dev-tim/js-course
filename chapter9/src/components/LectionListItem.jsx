@@ -1,7 +1,14 @@
 import React from 'react';
 
+
 class LectionListItem extends React.Component {
-  render() {
+  
+    handleClick(e){
+        const p = this.props;
+        p.onLectionSelected(p.lection);
+    }
+    
+    render() {
       const lection = this.props.lection;
       return (
         <div class="lection-item">
@@ -13,7 +20,7 @@ class LectionListItem extends React.Component {
             <div class="lection-item__homework">{lection.homework}</div>
 
             <div class="lection-item__action-button">
-                <button>I love action!</button>
+                <button onClick={this.handleClick.bind(this)}>I love action!</button>
             </div>
 
          </div>
