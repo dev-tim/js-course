@@ -1,15 +1,10 @@
 import React from 'react';
+import LectionListItem from './LectionListItem';
 
 function renderLectionList(lectionList = []){
-  debugger;
   return lectionList.map((lection) => {
     return (
-      <div>
-        <div>{lection.id}</div>
-        <div>{lection.lection}</div>
-        <div>{lection.video}</div>
-        <div>{lection.homework}</div>
-      </div>
+      <LectionListItem lection={lection} />
     )
   })
 }

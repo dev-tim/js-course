@@ -1,3 +1,13 @@
+@import "bootstrap-sass/assets/stylesheets/bootstrap/variables";
+@import "bootstrap-sass/assets/stylesheets/bootstrap/mixins/clearfix";
+@import "bootstrap-sass/assets/stylesheets/bootstrap/mixins/grid";
+@import "bootstrap-sass/assets/stylesheets/bootstrap/mixins/buttons";
+
+$cl-primary-white: #ffffff;
+$cl-primary-black: #0c0c0c;
+$cl-text: #d6d6d6;
+$cl-text-highligh: #d62f2f;
+
 body {
   background: linear-gradient(to left,#000428 ,#004e92);
   color: #f8f8f8;
@@ -8,4 +18,46 @@ body {
 h1 {
   color: #f8f8f8;
   font-family: helvetica;
+}
+
+.lection-item {
+  @include make-row();
+
+  margin: 10px 0;
+  color: $cl-text;
+
+  &__id {
+    @include make-xs-column(1);
+  }
+
+  &__lection {
+    @include make-xs-column(3);
+  }
+
+  &__video {
+    @include make-xs-column(1);
+    
+    & > a {
+      color: $cl-text-highligh;
+
+      &:visited {
+        color: $cl-primary-white
+      }
+
+      &:hover {
+        color: $cl-text-highligh
+      }
+    }
+  }
+
+  &__homework {
+    @include make-xs-column(4);
+  }
+
+  &__action-button{
+    @include make-xs-column(1);
+    & > button {
+      @include button-variant($color: #fbf1f1, $background: #e60000, $border:#e60000);
+    }
+  }
 }
