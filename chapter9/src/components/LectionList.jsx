@@ -1,5 +1,7 @@
 import React from 'react';
 import LectionListItem from './LectionListItem';
+import { connect } from 'react-redux'
+import LectionActions from '../actions/lection-actions';
 
 function renderLectionList(lectionList = [], onLectionSelected1){
   return lectionList.map((lection) => {
@@ -12,13 +14,11 @@ function renderLectionList(lectionList = [], onLectionSelected1){
 class LectionList extends React.Component {
 
   handleLectionSelection(lection){
-    this.setState({
-      selectedLection: lection
-    })
+    this.props.selectLectionAction(lection);
   }
 
   render() {
-      const selectedLection = this.state ? this.state.selectedLection : {};
+      const selectedLection = this.props.selectedLection ? this.props.selectedLection : {};
       return (
         <div>
           <h1>Discipline front-end - {selectedLection.lection}</h1>
@@ -31,4 +31,21 @@ class LectionList extends React.Component {
     }
   }
 
-export default LectionList;
+const mapStateToProps = function (state) {
+  debugger
+  return {
+    selectedLection: state.selectedLection
+  }
+} 
+
+const mapDispatchToProps = function (dispatch) {
+  debugger
+  return {
+    selectLectionAction: (lection) => {
+      debugger
+      return dispatch(LectionActions.selectLection(lection))
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LectionList);

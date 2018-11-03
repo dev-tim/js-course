@@ -1,12 +1,18 @@
 import './scss/style.scss';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import store from './store-config';
+
+import LectionActions from './actions/lection-actions';
 
 import Home from './components/Home';
 
 const renderApplication = () => {
   ReactDOM.render(
-    <Home /> ,
+    <Provider store={store}>
+      <Home />
+    </Provider>,
     document.querySelector('#root')
   );
 }
