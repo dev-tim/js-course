@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 class LectionListItem extends React.Component {
   
     handleClick(e){

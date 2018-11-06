@@ -1,7 +1,7 @@
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import lectionReducers from './reducers/lection-reducers'
+import thunk from 'redux-thunk';
 
-console.log('lectionReducers', lectionReducers);
-const store = createStore(lectionReducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+const store = createStore(lectionReducers, applyMiddleware(thunk));
 
 export default store;

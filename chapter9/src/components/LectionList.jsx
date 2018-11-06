@@ -17,6 +17,10 @@ class LectionList extends React.Component {
     this.props.selectLectionAction(lection);
   }
 
+  componentDidMount(){
+    this.props.fetchLectionsListAction();
+  }
+
   render() {
       const selectedLection = this.props.selectedLection ? this.props.selectedLection : {};
       return (
@@ -25,25 +29,28 @@ class LectionList extends React.Component {
           <div>
             <button>Add</button>
           </div>
-          {renderLectionList(this.props.items, this.handleLectionSelection.bind(this))}
+          {renderLectionList(this.props.lections, this.handleLectionSelection.bind(this))}
         </div>
       );
     }
   }
 
 const mapStateToProps = function (state) {
-  debugger
+  debugger;
   return {
-    selectedLection: state.selectedLection
+    selectedLection: state.selectedLection,
+    lections: state.lectionList 
   }
 } 
 
 const mapDispatchToProps = function (dispatch) {
-  debugger
   return {
     selectLectionAction: (lection) => {
       debugger
       return dispatch(LectionActions.selectLection(lection))
+    },
+    fetchLectionsListAction: () => {
+      return dispatch(LectionActions.fetchLectionListAsync());
     }
   }
 }

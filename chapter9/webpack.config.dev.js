@@ -14,5 +14,8 @@ module.exports = merge(webpackCommonConfig, {
 	devtool: "source-map",
 	devServer: {
 		hot: true,
+		proxy: {
+			'/api': 'http://localhost:9000'
+		}
 	}
 });
