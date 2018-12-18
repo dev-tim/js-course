@@ -17,10 +17,9 @@ const server = app.listen(process.env.PORT || 5000, () => {
 
 let apiUrl = 'https://slack.com/api';
 
-const getUserFullname = (team, user) => new Promise((resolve, reject) => {
-  let oauthToken = storage.getItemSync(team);
+const getUserFullname = (oauthToken) => new Promise((resolve, reject) => {
   console.log(oauthToken);
-  request.post('https://slack.com/api/users.info', {form: {token: oauthToken, user: user}}, function (error, response, body) {
+  request.post('https://slack.com/api/users.info', {form: {token: oauthToken }}, function (error, response, body) {
     if (!error && response.statusCode < 300) {
       console.log(body);
       return resolve(JSON.parse(body).user.real_name);
@@ -47,8 +46,4 @@ app.get('/auth', function(req, res){
       res.send({ data: body })
     }
   })
-});
-
-app.get('/team/:id', function (req, res) {
-
 });
